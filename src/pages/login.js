@@ -1,15 +1,6 @@
 import Navbar from '../components/Navbar';
-
-export default function SomePage() {
-  return (
-    <>
-      <Navbar />
-      {/* Your page content here */}
-    </>
-  );
-}
-import { supabase } from '../lib/supabaseClient';
 import { useState } from 'react';
+import { supabase } from '../lib/supabaseClient';
 import { useRouter } from 'next/router';
 
 export default function Login() {
@@ -24,25 +15,14 @@ export default function Login() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      <h1 className="text-2xl font-bold mb-4">Auritry HR System - Login</h1>
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        className="border rounded p-2 mb-2"
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        className="border rounded p-2 mb-2"
-      />
-      <button onClick={handleLogin} className="bg-blue-500 text-white px-4 py-2 rounded">
-        Login
-      </button>
-    </div>
+    <>
+      <Navbar />
+      <div className="flex flex-col items-center justify-center min-h-screen">
+        <h1 className="text-2xl font-bold mb-4">Auritry HR System - Login</h1>
+        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className="border rounded p-2 mb-2" />
+        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} className="border rounded p-2 mb-2" />
+        <button onClick={handleLogin} className="bg-blue-500 text-white px-4 py-2 rounded">Login</button>
+      </div>
+    </>
   );
 }
